@@ -1,0 +1,10 @@
+services:
+  openresty:
+    build:
+      dockerfile: ./Dockerfile
+    container_name: openresty
+    environment:
+      - SECURE_HEADER_KEY=X-Openresty-Auth-Key
+      - SECURE_HEADER_VALUE=S3cur3Au7h
+    ports:
+      - "8080:80"

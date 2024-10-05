@@ -1,0 +1,6 @@
+# Local env files
+.env*
+
+# Misc
+.DS_Store
+*.pem
