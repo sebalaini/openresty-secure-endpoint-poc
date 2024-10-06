@@ -1,0 +1,13 @@
+replicaCount: 1
+
+image:
+  repository: openresty
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80
+
+secureHeader:
+  key: X-Openresty-Auth-Key
+  value: S3cur3Au7h

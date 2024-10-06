@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openresty
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: openresty
+  template:
+    metadata:
+      labels:
+        app: openresty
+    spec:
+      containers:
+        - name: openresty
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          env:
+            - name: SECURE_HEADER_KEY
+              value: {{ .Values.secureHeader.key | quote }}
+            - name: SECURE_HEADER_VALUE
+              value: {{ .Values.secureHeader.value | quote }}
+          ports:
+            - containerPort: 80

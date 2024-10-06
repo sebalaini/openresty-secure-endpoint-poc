@@ -41,10 +41,16 @@ git clone https://github.com/your-repo/openresty-secure-endpoint-poc.git
 cd openresty-secure-endpoint-poc
 ```
 
-2. Build and run the Docker container:
+2.1 Build and run the Docker container:
 
 ```bash
 docker-compose up --build
+```
+
+2.2 Or Build and run Tilt:
+
+```bash
+tilt up
 ```
 
 3. Access the PHP app at `http://localhost`.
